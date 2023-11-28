@@ -1,10 +1,14 @@
 <?php
+session_start();
+if (!isset($_SESSION)){
+    header ("Location: registro/iniciar.php");
+}
 require_once("conexion/conexion.php");
 $title = "Bandeja de servicio";
 include_once("archivos/header.php");
 ?>
     <section>
-        <table border=1>
+        <table>
             <caption>Bandeja de servicio</caption>
             <tr>
                 <th>Servicio</th>
@@ -38,5 +42,6 @@ include_once("archivos/header.php");
             <a href="nuevaActividad.php">Registrar actividad</a>
         </div>
     </section>
-</body>
-</html>
+<?php
+include_once ("archivos/footer.php");
+?>

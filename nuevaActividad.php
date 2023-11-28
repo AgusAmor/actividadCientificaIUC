@@ -11,9 +11,9 @@ include_once("archivos/header.php");
              <div>
                  <label for="serv">Servicio</label>
                  <select name="serv" id="serv">
-                     <option value="cg">Cirugia general</option>
-                     <option value="orl">ORL</option>
-                     <option value="oyt">OyT</option>
+                     <option value="CG">Cirugia general</option>
+                     <option value="ORL">ORL</option>
+                     <option value="OyT">OyT</option>
                  </select>
              </div>
              <div>

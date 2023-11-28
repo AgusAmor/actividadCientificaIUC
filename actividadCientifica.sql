@@ -11,3 +11,10 @@ CREATE TABLE investigacion (
     estado varchar(100),
     PRIMARY KEY (id)
 );
+
+CREATE TABLE usuario (
+    id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(50) NOT NULL,
+    contra VARCHAR(60) NOT NULL,
+    PRIMARY KEY (id)
+);

@@ -1,3 +1,6 @@
+<?php
+$origen = "/actividadCientificaIUC";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,5 +10,10 @@
 </head>
 <body>
     <header>
-        hola 
+        <?php
+        if (isset($_SESSION)){
+            echo "<a href=$origen/registro/cerrar.php>Cerrar sesion</a>";
+        }
+        ?>
+        adios
     </header>
