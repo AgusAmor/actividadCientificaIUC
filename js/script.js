@@ -8,5 +8,6 @@ registrarse_btn.onclick = function(){
         alert("Las contraseñas no coinciden");
     }else{
         registrarse_form.action = "revisionRegistrarse.php";
+        registrarse_form.submit();
     }
 }

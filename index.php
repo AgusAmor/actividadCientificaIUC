@@ -1,8 +1,4 @@
 <?php
-session_start();
-if (!isset($_SESSION)){
-    header ("Location: registro/iniciar.php");
-}
 require_once("conexion/conexion.php");
 $title = "Bandeja de servicio";
 include_once("archivos/header.php");

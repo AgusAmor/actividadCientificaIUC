@@ -11,9 +11,10 @@ $origen = "/actividadCientificaIUC";
 <body>
     <header>
         <?php
-        if (isset($_SESSION)){
-            echo "<a href=$origen/registro/cerrar.php>Cerrar sesion</a>";
+        if(isset($_SESSION)){
+            echo "<a href= $origen/registro/cerrar.php>Cerrar sesión</a>";
+        }else{
+            echo "<a href= $origen/registro/iniciar.php>Iniciar sesión</a>";
         }
         ?>
-        adios
     </header>

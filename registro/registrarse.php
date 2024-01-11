@@ -4,7 +4,7 @@ $title = "Inicio de sesión";
 include_once("../archivos/header.php");
 ?>
 <section>
-    <form action="#" method="post" id="registrarse_form">
+    <form action="" method="post" id="registrarse_form">
         <fieldset>
             <legend>Registrarse</legend>
             <div>
