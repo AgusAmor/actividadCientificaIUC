@@ -30,10 +30,6 @@ include_once("archivos/header.php");
                 <textarea name="obj" id="ojv"></textarea>
             </div>
             <div>
-                <label for="alta">Fecha de aprobado</label>
-                <input id="alta" name="alta" type="date"/>
-            </div>
-            <div>
                 <label for="finEst">Fecha estimada de finalización</label>
                 <input id="finEst" name="finEst" type="date"/>
             </div>
