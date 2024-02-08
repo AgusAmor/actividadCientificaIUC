@@ -2,6 +2,7 @@
 require_once("conexion/conexion.php");
 $title = "Registrar Actividad";
 include_once("archivos/header.php");
+$investigador = $_GET['investigador'];
 ?>
 <section>
     <form action="revisionNueva.php" method="get">
@@ -22,8 +23,9 @@ include_once("archivos/header.php");
              </div>
            </div>
             <div>
-                <label for="invs">Investigadores</label>
-                <textarea name="invs" id="invs"></textarea>
+                <?php
+                echo "<input id=invs name=invs type=hidden value=$investigador />";
+                ?>
             </div>
             <div>
                 <label for="obj">Objetivos</label>

@@ -1,4 +1,6 @@
 <?php
+ session_start();
+ $_SESSION;
 $origen = "/actividadCientificaIUC";
 ?>
 <!DOCTYPE html>
@@ -11,10 +13,12 @@ $origen = "/actividadCientificaIUC";
 <body>
     <header>
         <?php
-        if(isset($_SESSION)){
-            echo "<a href= $origen/registro/cerrar.php>Cerrar sesión</a>";
+        if($_SESSION != NULL){
+            $usuario = $_SESSION['nombre'];
+            echo "<p>Usuario: $usuario</p>";
+            echo "<a href= registro/cerrar.php>Cerrar sesión</a>";
         }else{
-            echo "<a href= $origen/registro/iniciar.php>Iniciar sesión</a>";
+            header ("Location: $origen/registro/iniciar.php");
         }
         ?>
     </header>

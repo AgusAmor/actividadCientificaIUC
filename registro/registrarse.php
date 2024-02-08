@@ -1,23 +1,33 @@
 <?php
 require_once("../conexion/conexion.php");
-$title = "Inicio de sesión";
-include_once("../archivos/header.php");
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+</head>
+<body>
 <section>
     <form action="" method="post" id="registrarse_form">
         <fieldset>
             <legend>Registrarse</legend>
             <div>
+                <label for="nom">Nombre</label>
+                <input id="nom" name="nom" type="text" required/>
+            </div>
+            <div>
                 <label for="mail">Correo electrónico</label>
-                <input id="mail" name="mail" type="email"/>
+                <input id="mail" name="mail" type="email" required/>
             </div>
             <div>
                 <label for="pass">Contraseña</label>
-                <input id="pass" name="pass" type="password"/>
+                <input id="pass" name="pass" type="password" required/>
             </div>
             <div>
                 <label for="pass2">Confirmar contraseña</label>
-                <input id="pass2" name="pass2" type="password"/>
+                <input id="pass2" name="pass2" type="password" required/>
             </div>
             <input type="submit" id="registrarse_btn" value="Registrarse"/>
         </fieldset>
