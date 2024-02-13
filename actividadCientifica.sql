@@ -21,12 +21,12 @@ CREATE TABLE investigacion (
     PRIMARY KEY (id)
 );
 
-
 CREATE TABLE estado (
     id INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(10) NOT NULL,
     PRIMARY KEY (id)
 );
+
 INSERT INTO estado (nombre)
 VALUES
     ("Ejecucion"),
@@ -35,7 +35,6 @@ VALUES
     ("Publicado"),
     ("Cancelado"),
     ("Ingresado");
-
 
 CREATE TABLE tiempoEstado (
     idEstado INT NOT NULL, 
@@ -46,4 +45,14 @@ CREATE TABLE tiempoEstado (
     FOREIGN KEY (idInvestigacion) REFERENCES investigacion (id),
     FOREIGN KEY (idInvestigador) REFERENCES investigador (id),
     FOREIGN KEY (idEstado) REFERENCES estado (id)
+);
+
+CREATE TABLE documentacion (
+    id INT NOT NULL AUTO_INCREMENT,
+    ruta VARCHAR(200) NOT NULL,
+    idInvestigacion INT NOT NULL,
+    idInvestigador INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idInvestigador) REFERENCES investigador (id),
+    FOREIGN KEY (idInvestigacion) REFERENCES investigacion (id)
 );

@@ -14,7 +14,7 @@
                     <th>Objetivo</th>
                     <th>Fecha estimada de finalización</th>
                     <th>Estado</th>
-                    <th colspan=3>Acciones</th>
+                    <th colspan=4>Acciones</th>
                 </tr>
                 <tr>
                     <?php
@@ -50,6 +50,9 @@
                         }else if ($fila['estado'] == "Cancelado"){
                             echo "<td><a href=trazabilidad.php?id=$fila[id]>Ver trazabilidad</a></td>";
                             echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=6&investigador=$_SESSION[id]>Activar</a></td>"; 
+                        }
+                        if ($fila['estado'] == "Ejecucion"){
+                            echo "<td><a href=cargarArchivo.php?id=$fila[id]&investigador=$_SESSION[id]>Subir Archivo</a></td>";
                         }
                         echo "</tr>";
                     }
