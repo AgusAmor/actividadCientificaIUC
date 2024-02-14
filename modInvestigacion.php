@@ -32,7 +32,7 @@ if ($con){
            </div>
             <div>
                 <label for=invs >Investigadores</label>
-                <textarea name=invs id=invs >$fila[investigadores]</textarea>
+                <textarea name=invs id=invs >$fila[investigador]</textarea>
             </div>
             <div>
                 <label for=obj >Objetivos</label>

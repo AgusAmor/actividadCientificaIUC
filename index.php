@@ -39,20 +39,23 @@
                         }
                         if ($fila['estado'] != "Cancelado"){
                             if ($fila['estado'] == "Publicado"){
-                                echo "<td><a href=trazabilidad.php?id=$fila[id]>Ver trazabilidad</a></td>";
-
+                                echo "<td><a href=trazabilidad.php?id=$fila[id]>Trazabilidad</a></td>";
+                                echo "<td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>";
                             }else{
                                 echo "
-                                <td><a href=cambioEstado.php?id=$fila[id]&accion=5&investigador=$_SESSION[id]>Cancelar</a></td>
+                                <td><a href=cambioEstado.php?id=$fila[id]&accion=5&investigador=$_SESSION[id]>Cancelar</a></td>";
+                                echo"
                                 <td><a href=modInvestigacion.php?id=$fila[id]&investigador=$_SESSION[id]>Editar</a></td>
                                 ";
+                                if ($fila['estado'] == "Ejecucion"){
+                                    echo "<td><a href=cargarArchivo.php?id=$fila[id]&investigador=$_SESSION[id]>Subir Archivo</a></td>";
+                                    echo "<td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>";
+                                }
                             }
                         }else if ($fila['estado'] == "Cancelado"){
-                            echo "<td><a href=trazabilidad.php?id=$fila[id]>Ver trazabilidad</a></td>";
+                            echo "<td><a href=trazabilidad.php?id=$fila[id]>Trazabilidad</a></td>";
+                            echo "<td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>";
                             echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=6&investigador=$_SESSION[id]>Activar</a></td>"; 
-                        }
-                        if ($fila['estado'] == "Ejecucion"){
-                            echo "<td><a href=cargarArchivo.php?id=$fila[id]&investigador=$_SESSION[id]>Subir Archivo</a></td>";
                         }
                         echo "</tr>";
                     }

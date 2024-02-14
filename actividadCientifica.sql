@@ -49,6 +49,7 @@ CREATE TABLE tiempoEstado (
 
 CREATE TABLE documentacion (
     id INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
     ruta VARCHAR(200) NOT NULL,
     idInvestigacion INT NOT NULL,
     idInvestigador INT NOT NULL,
