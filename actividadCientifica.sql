@@ -49,11 +49,23 @@ CREATE TABLE tiempoEstado (
 
 CREATE TABLE documentacion (
     id INT NOT NULL AUTO_INCREMENT,
+    idInvestigacion INT NOT NULL,
+    investigador VARCHAR(50) NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     ruta VARCHAR(200) NOT NULL,
-    idInvestigacion INT NOT NULL,
-    idInvestigador INT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (idInvestigador) REFERENCES investigador (id),
+    FOREIGN KEY (idInvestigacion) REFERENCES investigacion (id)
+);
+
+CREATE TABLE modificacion (
+    id INT NOT NULL AUTO_INCREMENT,
+    idInvestigacion INT NOT NULL,
+    investigador VARCHAR(50) NOT NULL,
+    fecha DATE NOT NULL,
+    servicio VARCHAR(10),
+    nombre VARCHAR(100),
+    objetivo VARCHAR(100),
+    fechaFin VARCHAR(10),
+    PRIMARY KEY (id),
     FOREIGN KEY (idInvestigacion) REFERENCES investigacion (id)
 );

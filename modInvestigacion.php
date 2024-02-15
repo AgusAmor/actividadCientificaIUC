@@ -19,10 +19,25 @@ if ($con){
            <input type=hidden id=id name=id value=$fila[id] />
              <div>
                  <label for=serv >Servicio</label>
-                 <select name=serv id=serv >
-                     <option value=CG >Cirugia general</option>
-                     <option value=ORL >ORL</option>
-                     <option value=OyT >OyT</option>
+                 <select name=serv id=serv >";
+                        if ($fila['servicio'] == "CG"){
+                            echo "<option value=CG selected>Cirugia general</option>";
+                        }else{
+                            echo "<option value=CG >Cirugia general</option>";
+                        }
+
+                        if ($fila['servicio'] == "ORL"){
+                            echo "<option value=ORL selected>ORL</option>";
+                        }else{
+                            echo "<option value=ORL >ORL</option>";
+                        }
+
+                        if ($fila['servicio'] == "OyT"){
+                            echo "<option value=OyT selected>OyT</option>";
+                        }else{
+                            echo "<option value=OyT >OyT</option>";
+                        }
+                 echo"
                  </select>
              </div>
              <div>
@@ -31,16 +46,8 @@ if ($con){
              </div>
            </div>
             <div>
-                <label for=invs >Investigadores</label>
-                <textarea name=invs id=invs >$fila[investigador]</textarea>
-            </div>
-            <div>
                 <label for=obj >Objetivos</label>
                 <textarea name=obj id=ojv >$fila[objetivo]</textarea>
-            </div>
-            <div>
-                <label for=alta >Fecha de aprobado</label>
-                <input id=alta name=alta type=date value=$fila[fechaInicio] />
             </div>
             <div>
                 <label for=finEst >Fecha estimada de finalización</label>

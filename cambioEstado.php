@@ -13,6 +13,10 @@ if (isset($_GET['accion'])){
     $accion = $_GET['accion'];
 }
 
+if (isset($_GET['estado'])){
+    $estado = $_GET['estado'];
+}
+
 switch($accion){
 case 1:
     $consulta = "UPDATE investigacion SET estado = 'Ejecucion' WHERE id = '$id';
@@ -59,7 +63,22 @@ case 4:
     break;
 
 case 5:
-    $consulta = "UPDATE tiempoEstado SET fin = NOW() WHERE idInvestigacion = '$id' AND fin = '';
+    switch($estado){
+        case "Ingresado":
+            $idEstado = 6;
+            break;
+        case "Ejecucion":
+            $idEstado = 1;
+            break;
+        case "Enviado":
+            $idEstado = 2;
+            break;
+        case "Revision":
+            $idEstado = 3;
+            break;
+    }
+
+    $consulta = "UPDATE tiempoEstado SET fin = NOW() WHERE idInvestigacion = '$id' AND idEstado = '$idEstado';
                 UPDATE investigacion SET estado = 'Cancelado' WHERE id = '$id';
                 INSERT INTO tiempoEstado (idEstado, idInvestigacion, idInvestigador, inicio) VALUES ('5', '$id', $investigador, NOW());";
     $resultado = mysqli_multi_query($con, $consulta);

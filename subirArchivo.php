@@ -1,4 +1,6 @@
 <?php
+ session_start();
+ $_SESSION;
 require_once("conexion/conexion.php");
 if (isset($_POST['investigacion'])){
     $inv = $_POST['investigacion'];
@@ -20,7 +22,7 @@ if (!empty($_POST['nom'])){
 
 move_uploaded_file($_FILES ['arch']['tmp_name'], $archivo);
 
-    $consulta = "INSERT INTO documentacion SET nombre = '$nom', ruta = '$archivo', idInvestigacion = '$inv', idInvestigador = '$indr'";
+    $consulta = "INSERT INTO documentacion SET idInvestigacion = '$inv', investigador = '$_SESSION[nombre]', nombre = '$nom', ruta = '$archivo'";
     $resultado = mysqli_query($con, $consulta);
 
 if ($resultado){

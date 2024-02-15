@@ -3,7 +3,7 @@
     $title = "Bandeja de servicio";
     include_once("archivos/header.php");
     ?>
-
+    
         <section>
             <table>
                 <caption>Bandeja de servicio</caption>
@@ -12,9 +12,9 @@
                     <th>Titulo</th>
                     <th>Investigador</th>
                     <th>Objetivo</th>
-                    <th>Fecha estimada de finalización</th>
+                    <th>Fecha de fin estimada</th>
                     <th>Estado</th>
-                    <th colspan=4>Acciones</th>
+                    <th colspan=5>Acciones</th>
                 </tr>
                 <tr>
                     <?php
@@ -28,6 +28,8 @@
                         <td>$fila[objetivo]</td>
                         <td>$fila[fechaFin]</td>
                         <td>$fila[estado]</td>";
+
+                        // CAMBIO DE ESTADO
                         if ($fila['estado'] == "Ingresado"){
                             echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=1&investigador=$_SESSION[id]>Iniciar</a></td>";
                         }else if ($fila['estado'] == "Ejecucion"){
@@ -37,25 +39,38 @@
                         }else if ($fila['estado'] == "Revision"){
                             echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=4&investigador=$_SESSION[id]>Publicar</a></td>";
                         }
+
+                        // ACCIONES
                         if ($fila['estado'] != "Cancelado"){
+                            // PUBLICADO
                             if ($fila['estado'] == "Publicado"){
-                                echo "<td><a href=trazabilidad.php?id=$fila[id]>Trazabilidad</a></td>";
-                                echo "<td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>";
-                            }else{
                                 echo "
-                                <td><a href=cambioEstado.php?id=$fila[id]&accion=5&investigador=$_SESSION[id]>Cancelar</a></td>";
-                                echo"
+                                <td><a href=trazabilidad.php?id=$fila[id]&fechaFin=$fila[fechaFin]&estado=$fila[estado]>Trazabilidad</a></td>
+                                <td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>
+                                <td><a href=modificaciones.php?id=$fila[id] >Modificaciones</a></td>
+                                ";
+                            }else{
+                                // EN EJECUCION (subida de archivos)
+                                if ($fila['estado'] == "Ejecucion"){
+                                    echo "
+                                    <td><a href=cargarArchivo.php?id=$fila[id]&investigador=$_SESSION[id]>Subir Archivo</a></td>
+                                    <td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>
+                                    ";
+                                }
+                                // TODAS LAS DEMAS
+                                echo "
+                                <td><a href=cambioEstado.php?id=$fila[id]&accion=5&investigador=$_SESSION[id]&estado=$fila[estado]>Cancelar</a></td>
                                 <td><a href=modInvestigacion.php?id=$fila[id]&investigador=$_SESSION[id]>Editar</a></td>
                                 ";
-                                if ($fila['estado'] == "Ejecucion"){
-                                    echo "<td><a href=cargarArchivo.php?id=$fila[id]&investigador=$_SESSION[id]>Subir Archivo</a></td>";
-                                    echo "<td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>";
-                                }
                             }
+                        // CANCELADO
                         }else if ($fila['estado'] == "Cancelado"){
-                            echo "<td><a href=trazabilidad.php?id=$fila[id]>Trazabilidad</a></td>";
-                            echo "<td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>";
-                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=6&investigador=$_SESSION[id]>Activar</a></td>"; 
+                            echo "
+                            <td><a href=trazabilidad.php?id=$fila[id]>Trazabilidad</a></td>
+                            <td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>
+                            <td><a href=modificaciones.php?id=$fila[id] >Modificaciones</a></td>
+                            <td><a href=cambioEstado.php?id=$fila[id]&accion=6&investigador=$_SESSION[id]>Activar</a></td>
+                            "; 
                         }
                         echo "</tr>";
                     }

@@ -1,9 +1,12 @@
 <?php
  require_once("conexion/conexion.php");
-if (isset($_GET['id'])){
-    $id = $_GET['id'];
-}
+ if (isset($_GET['id'])){
+     $id = $_GET['id'];
+ }
+ $title = "Documentación investigacion $id";
+ include_once("archivos/header.php");
 ?>
+<h1>Documentación</h1>
 <section>
     <ul>
         <?php
