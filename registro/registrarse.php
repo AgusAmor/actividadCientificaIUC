@@ -6,6 +6,7 @@ require_once("../conexion/conexion.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css" />
     <title>Registrarse</title>
 </head>
 <body>
@@ -29,6 +30,7 @@ require_once("../conexion/conexion.php");
                 <label for="pass2">Confirmar contraseña</label>
                 <input id="pass2" name="pass2" type="password" required/>
             </div>
+            <a href="iniciar.php">Iniciar sesión</a>
             <input type="submit" id="registrarse_btn" value="Registrarse"/>
         </fieldset>
     </form>

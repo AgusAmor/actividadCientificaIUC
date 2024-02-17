@@ -4,15 +4,15 @@
     include_once("archivos/header.php");
     ?>
     
-        <section>
-            <table>
+        <section id="index">
+            <table id="tabla_servicio">
                 <caption>Bandeja de servicio</caption>
                 <tr>
                     <th>Servicio</th>
-                    <th>Titulo</th>
+                    <th id="tt">Titulo</th>
                     <th>Investigador</th>
-                    <th>Objetivo</th>
-                    <th>Fecha de fin estimada</th>
+                    <th id="obj">Objetivo</th>
+                    <th id="fch">Fin estimado</th>
                     <th>Estado</th>
                     <th colspan=5>Acciones</th>
                 </tr>
@@ -22,12 +22,12 @@
                     $resultado = mysqli_query($con, $consulta);
                     while ($fila = mysqli_fetch_array($resultado)){
                         echo "
-                        <td>$fila[servicio]</td>
+                        <td class=servicio_cent>$fila[servicio]</td>
                         <td>$fila[nombre]</td>
-                        <td>$fila[investigador]</td>
+                        <td class=servicio_cent>$fila[investigador]</td>
                         <td>$fila[objetivo]</td>
-                        <td>$fila[fechaFin]</td>
-                        <td>$fila[estado]</td>";
+                        <td class=servicio_cent>$fila[fechaFin]</td>
+                        <td class=servicio_cent>$fila[estado]</td>";
 
                         // CAMBIO DE ESTADO
                         if ($fila['estado'] == "Ingresado"){
@@ -76,7 +76,7 @@
                     }
                     ?>
             </table>
-            <div>
+            <div id="regAct">
                 <?php
                 echo "<a href=nuevaActividad.php?investigador=$_SESSION[nombre]>Registrar actividad</a>";
                 ?>

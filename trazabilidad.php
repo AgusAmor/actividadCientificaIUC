@@ -4,6 +4,10 @@ require_once("conexion/conexion.php");
 if (isset($_GET['id'])){
     $id = $_GET['id'];
 }
+
+$title = "Trazabilidad inv. N° $id";
+include_once("archivos/header.php");
+
 if (isset($_GET['fechaFin'])){
     $finEstimado = $_GET['fechaFin'];
 }
