@@ -11,7 +11,7 @@ if (isset($_GET['investigador'])){
 }
 ?>
 <section>
-    <form action="subirArchivo.php" method="post" enctype=multipart/form-data>
+    <form id="form_carch" action="subirArchivo.php" method="post" enctype=multipart/form-data>
         <fieldset>
             <?php
                 echo "
@@ -33,8 +33,10 @@ if (isset($_GET['investigador'])){
             <label for="arch">Archivo</label>
             <input id="arch" name="arch" type="file"/>
         </div>
-        <input type="submit"/>
+        <input class="btn_form" type="submit"/>
         </fieldset>
     </form>
-    <a href=index.php >Volver</a>
+    <div class="boton">
+        <a href=index.php >Volver</a>
+    </div>
 </section>

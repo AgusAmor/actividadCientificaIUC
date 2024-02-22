@@ -5,8 +5,15 @@
  }
  $title = "Documentación investigacion $id";
  include_once("archivos/header.php");
+
+ $consulta = "SELECT nombre FROM investigacion WHERE id = '$id'";
+ $resultado = mysqli_query($con, $consulta);
+ $fila = mysqli_fetch_array($resultado);
+
+ echo "
+    <h1>Documentación investigación: $fila[nombre]</h1>
+ ";
 ?>
-<h1>Documentación</h1>
 <section>
     <ul>
         <?php

@@ -5,13 +5,14 @@ include_once("archivos/header.php");
 $investigador = $_GET['investigador'];
 ?>
 <section>
-    <form action="revisionNueva.php" method="get">
+    <form id="form_nact" action="revisionNueva.php" method="get">
         <fieldset>
             <legend>Registro de actividad científica</legend>
            <div>
              <div>
                  <label for="serv">Servicio</label>
                  <select name="serv" id="serv">
+                     <option default>-</option>
                      <option value="CG">Cirugia general</option>
                      <option value="ORL">ORL</option>
                      <option value="OyT">OyT</option>
@@ -31,14 +32,14 @@ $investigador = $_GET['investigador'];
                 <label for="obj">Objetivos</label>
                 <textarea name="obj" id="ojv"></textarea>
             </div>
-            <div>
+            <div>   
                 <label for="finEst">Fecha estimada de finalización</label>
                 <input id="finEst" name="finEst" type="date"/>
             </div>
-            <div>
-                <input type="submit" value="Guardar"/>
-                <input type="reset" value="Limpiar"/>
-                <a href="index.php">Cancelar</a>
+            <div id="btn_container">
+                <input class="btn_form" type="submit" value="Guardar"/>
+                <input class="btn_form" type="reset" value="Limpiar"/>
+                <a class="btn_form" href="index.php">Cancelar</a>
             </div>
         </fieldset>
     </form>

@@ -8,13 +8,13 @@
             <table id="tabla_servicio">
                 <caption>Bandeja de servicio</caption>
                 <tr>
-                    <th>Servicio</th>
+                    <th id="serv">Servicio</th>
                     <th id="tt">Titulo</th>
-                    <th>Investigador</th>
+                    <th id="inv">Investigador</th>
                     <th id="obj">Objetivo</th>
                     <th id="fch">Fin estimado</th>
-                    <th>Estado</th>
-                    <th colspan=5>Acciones</th>
+                    <th id="est">Estado</th>
+                    <th id="acc" colspan=5>Acciones</th>
                 </tr>
                 <tr>
                     <?php
@@ -37,7 +37,7 @@
                         }else if ($fila['estado'] == "Enviado"){
                             echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=3&investigador=$_SESSION[id]>Revision</a></td>";
                         }else if ($fila['estado'] == "Revision"){
-                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=4&investigador=$_SESSION[id]>Publicar</a></td>";
+                            echo "<td><a href=publicado.php?id=$fila[id]&accion=4&investigador=$_SESSION[id]>Publicar</a></td>";
                         }
 
                         // ACCIONES
@@ -45,6 +45,7 @@
                             // PUBLICADO
                             if ($fila['estado'] == "Publicado"){
                                 echo "
+                                <td><a href=$fila[enlace] target=blank>Enlace</a></td>
                                 <td><a href=trazabilidad.php?id=$fila[id]&fechaFin=$fila[fechaFin]&estado=$fila[estado]>Trazabilidad</a></td>
                                 <td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>
                                 <td><a href=modificaciones.php?id=$fila[id] >Modificaciones</a></td>
@@ -76,7 +77,7 @@
                     }
                     ?>
             </table>
-            <div id="regAct">
+            <div class="boton">
                 <?php
                 echo "<a href=nuevaActividad.php?investigador=$_SESSION[nombre]>Registrar actividad</a>";
                 ?>

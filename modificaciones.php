@@ -9,10 +9,14 @@
 
     $consulta = "SELECT * FROM modificacion WHERE idInvestigacion = '$id'";
     $resultado = mysqli_query ($con, $consulta);
+
+    $consulta2 = "SELECT nombre FROM investigacion WHERE id = '$id'";
+    $resultado2 = mysqli_query($con, $consulta2);
+    $fila2 = mysqli_fetch_array($resultado2);
 ?>
 <section>
-    <table border=1>
-        <legend>Modificaciones investigación N° <?php echo "$id";?></legend>
+    <table>
+        <legend>Modificaciones investigación: <?php echo "$fila2[nombre]";?></legend>
         <tr>
             <th>N° modificacion</th>
             <th>Investigador</th>

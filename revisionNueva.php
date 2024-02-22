@@ -26,7 +26,8 @@ $consulta = "INSERT INTO investigacion SET
     objetivo = '$obj', 
     fechaInicio = NOW(), 
     fechaFin = '$finEst', 
-    estado = 'Ingresado'";
+    estado = 'Ingresado',
+    enlace = NULL";
 
 $resultado = mysqli_query($con, $consulta);
 

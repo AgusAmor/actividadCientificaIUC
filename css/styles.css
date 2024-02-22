@@ -4,6 +4,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
+    font-size: 1rem;
 }
 
 body{
@@ -14,6 +15,24 @@ a{
     text-decoration: none;
 }
 
+.boton{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.boton a{
+    color: rgb(67, 179, 127);
+    border-style: solid;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.boton a:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(67, 179, 127);
+}
+
+/* tablas */
 table{
     margin: auto;
     background: rgba(67, 179, 127, 0.150);
@@ -22,6 +41,88 @@ table{
     border-style: solid;
     border-color: rgb(67, 179, 127);
 }
+/*/
+
+/* formularios */
+form{
+    margin: auto;
+    width: 60%;
+    border-style: solid;
+    border-color: rgb(67, 179, 127);
+    background: rgba(67, 179, 127, 0.150);
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+fieldset{
+    border-style: none;
+    padding: 10px;
+}
+
+form div{
+    margin: 5px auto;
+}
+
+fieldset legend{
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(67, 179, 127);
+}
+
+form input{
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(67, 179, 127);
+    border: 0;
+    color: rgb(255, 255, 255);
+}
+
+form input:focus{
+    background-color:  rgb(255, 255, 255);
+    color: rgb(67, 179, 127);
+    border-radius: 2px;
+}
+
+form textarea{
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(67, 179, 127);
+    border: 0;
+    color: rgb(255, 255, 255);
+    resize: none;
+    height: 30px;
+}
+
+form textarea:focus{
+    background-color:  rgb(255, 255, 255);
+    color: rgb(67, 179, 127);
+    border-radius: 2px;
+    height: auto;
+}
+
+form select{
+    background-color: rgb(67, 179, 127);
+    color: rgb(255, 255, 255);
+    border: 0;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.btn_form{
+    
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(67, 179, 127);
+    float: right;
+    padding: 5px;
+}
+
+.btn_form:hover{
+    color: rgb(67, 179, 127);
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+/*/
 
 
 /* HEADER */
@@ -67,7 +168,7 @@ header a:hover{
 
 #tabla_servicio caption{
     margin-bottom: 10px;
-    font-size: 40px;
+    font-size: 2rem;
     color: rgb(67, 179, 127);
 }
 
@@ -87,31 +188,76 @@ header a:hover{
     padding-bottom: 5px;
 }
 
+#serv{
+    width: 5%;
+}
+
 #tt{
-    width: 250px;
+    width: 20%;
+}
+
+#inv{
+    width: 5%;
 }
 
 #obj{
-    width: 200px;
+    width: 25%;
 }
 
 #fch{
-    width: auto;
+    width: 15%;
 }
 
-#regAct{
+#est{
+    width: 5%;
+}
+
+#acc{
+    width: 30%;
+}
+
+
+/* TRAZABILIDAD */
+#tabla_traz{
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 70%;
 }
 
-#regAct a{
+#tabla_traz caption{
+    margin-bottom: 10px;
+    font-size: 1.5rem;
     color: rgb(67, 179, 127);
-    border-style: solid;
-    padding: 5px;
-    border-radius: 15px;
 }
 
-#regAct a:hover{
-    color: rgb(255, 255, 255);
-    background-color: rgb(67, 179, 127);;
+#tabla_traz td{
+    padding: 2px;
+    width: 20%;
+}
+
+#tabla_ffin td{
+    padding: 2px;
+    text-align: center;
+    width: 33%;
+}
+
+/* CARGAR ARCHIVO */
+#form_carch fieldset{
+    padding: 20px;
+}
+
+#form_carch div input{
+    margin-left: 20px;
+}
+
+
+/* NUEVA ACTIVIDAD */
+#form_nact #btn_container{
+    display: flex;
+    gap: 10px;
+    float: right;
+}
+
+#form_nact fieldset{
+    padding: 20px;
 }

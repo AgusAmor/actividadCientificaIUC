@@ -18,6 +18,7 @@ CREATE TABLE investigacion (
     fechaInicio DATETIME NOT NULL,
     fechaFin DATE,
     estado VARCHAR(100),
+    enlace VARCHAR(500),
     PRIMARY KEY (id)
 );
 

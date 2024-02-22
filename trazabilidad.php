@@ -17,14 +17,17 @@ if (isset($_GET['estado'])){
     $estado = NULL;
 }
 
+$consulta = "SELECT nombre FROM investigacion WHERE id = '$id'";
+$resultado = mysqli_query($con, $consulta);
+$fila = mysqli_fetch_array($resultado);
 ?>
-<h1>Trazabilidad</h1>
+
 <section>
-    <table>
-        <caption>Investigación <?php echo"$id";?></caption>
+    <table id="tabla_traz">
+        <caption>Investigación <?php echo"$fila[nombre]";?></caption>
             <tr>
-                <th>Estado</th>
                 <th>Usuario</th>
+                <th>Estado</th>
                 <th>Fecha Inicio</th>
                 <th>Fecha de Fin</th>    
                 <th>Cantidad de dias</th>
@@ -49,6 +52,7 @@ if (isset($_GET['estado'])){
     
                 echo "
                 <tr>
+                <td>$fila2[nombre]</td>
                 ";
                 switch($fila['idEstado']){
                     case 6:
@@ -71,7 +75,6 @@ if (isset($_GET['estado'])){
                         break;
                 }
                 echo "
-                <td>$fila2[nombre]</td>
                 <td>$fila[inicio]</td>
                 <td>$fila[fin]</td>
                 <td>$tiempo</td>
@@ -88,7 +91,7 @@ if (isset($_GET['estado'])){
     if ($estado == "Publicado"){
         echo "
         <section>
-            <table>
+            <table id=tabla_ffin>
                 <tr>
                     <th>Fin Estimado</th>
                     <th>Fin Real</th>
@@ -114,4 +117,6 @@ if (isset($_GET['estado'])){
         ";
     }
     ?>
-<a href="index.php">Volver</a>
+<div class="boton">
+    <a href="index.php">Volver</a>
+</div>
