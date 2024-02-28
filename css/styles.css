@@ -169,19 +169,8 @@ header a:hover{
 
 
 /* INDEX */
-#index{
-    padding: 10px;
-    width: 100%;
-}
-
 #tabla_servicio .servicio_cent{
     text-align: center;
-}
-
-#tabla_servicio caption{
-    margin-bottom: 10px;
-    font-size: 2rem;
-    color: rgb(67, 179, 127);
 }
 
 #tabla_servicio a{
@@ -193,7 +182,7 @@ header a:hover{
 }
 
 #tabla_servicio td{
-    padding: 5px 12px;
+    padding: 7px;
 }
 
 #tabla_servicio th{
@@ -261,6 +250,24 @@ header a:hover{
 
 #tabla_mod #cambios{
     border-style: solid;
+    border-color: rgb(67, 179, 127);
+    border-radius: 5px;
+}
+/*/
+
+
+/* DOCUMENTACION */
+#tabla_doc{
+    width: 700px;
+}
+
+#tabla_doc a{
+    color: rgb(67, 179, 127);
+    text-align: center;
+}
+
+#tabla_doc a:hover{
+    color: rgb(255, 255, 255);
 }
 /*/
 
@@ -447,3 +454,17 @@ header a:hover{
     margin-right: 8px;
 }
 /*/
+
+
+/* MEDIA QUERY */
+@media (max-width: 1490px){
+    #tabla_servicio th, #tabla_servicio td, #tabla_servicio a{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1360px){
+    #tabla_servicio th, #tabla_servicio td, #tabla_servicio a{
+        font-size: 0.8rem;
+    }
+}

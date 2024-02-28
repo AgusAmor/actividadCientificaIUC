@@ -4,7 +4,7 @@
     include_once("archivos/header.php");
     ?>
     
-        <section id="index">
+        <section>
             <table id="tabla_servicio">
                 <caption>Bandeja de servicio</caption>
                 <tr>

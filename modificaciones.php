@@ -49,5 +49,7 @@
         }
         ?>
     </table>
-    <a href="index.php">Volver</a>
+    <div class="boton">
+        <a href="index.php">Volver</a>
+    </div>
 </section>

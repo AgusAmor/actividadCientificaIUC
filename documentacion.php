@@ -11,11 +11,11 @@
  $fila = mysqli_fetch_array($resultado);
 ?>
 <section>
-    <table>
+    <table id="tabla_doc">
     <caption>Documentación investigación: <?php echo "$fila[nombre]";?></caption>
         <tr>
             <th>Documento</th>
-            <th>Acciones</th>
+            <th colspan=2>Acciones</th>
         </tr>
         <?php
             $consulta = "SELECT * FROM documentacion WHERE idInvestigacion = '$id'";
@@ -23,12 +23,15 @@
             while ($fila = mysqli_fetch_array ($resultado)){
                 echo "
                     <tr>
-                        <td><a href='$fila[ruta]' download>$fila[nombre]</a></td>
+                        <td>$fila[nombre]</td>
+                        <td><a href='$fila[ruta]' download>Descargar</a></td>
                         <td><a href=eliminarDocumentacion.php?doc=$fila[id]&id=$id>Eliminar</a></td>
                     </tr>
                 ";
             }
             ?>
     </table>
-    <a href="index.php">Volver</a>
+    <div class="boton">
+        <a href="index.php">Volver</a>
+    </div>
 </section>
