@@ -1,5 +1,7 @@
 <?php
 require_once("conexion/conexion.php");
+$title = "Modificar Actividad";
+include_once("archivos/header.php");
 
 if ($con){
     $id;
@@ -12,12 +14,13 @@ if ($con){
     $fila = mysqli_fetch_array($resultado);
 
     echo "
-    <form action=revisionModificacion.php method=get>
+    <form id=form_mod action=revisionModificacion.php method=get>
         <fieldset>
             <legend>Modificacion de actividad científica</legend>
-           <div>
-           <input type=hidden id=id name=id value=$fila[id] />
-             <div>
+            <div>
+                <input type=hidden id=id name=id value=$fila[id] />
+            </div>
+             <div class=campo>
                  <label for=serv >Servicio</label>
                  <select name=serv id=serv >";
                         if ($fila['servicio'] == "CG"){
@@ -40,22 +43,21 @@ if ($con){
                  echo"
                  </select>
              </div>
-             <div>
+             <div class=campo>
                  <label for=nom >Título</label>
                  <textarea name=nom id=nom >$fila[nombre]</textarea>
              </div>
-           </div>
-            <div>
+            <div class=campo>
                 <label for=obj >Objetivos</label>
-                <textarea name=obj id=ojv >$fila[objetivo]</textarea>
+                <textarea name=obj id=obj >$fila[objetivo]</textarea>
             </div>
-            <div>
-                <label for=finEst >Fecha estimada de finalización</label>
+            <div class=campo>
+                <label for=finEst >Fecha de fin</label>
                 <input id=finEst name=finEst type=date value=$fila[fechaFin] />
             </div>
-            <div>
-                <input type=submit value=Guardar />
-                <a href=index.php >Cancelar</a>
+            <div class=btn_container>
+                <input class=btn_form type=submit value=Guardar />
+                <a class=btn_form href=index.php >Cancelar</a>
             </div>
         </fieldset>
     </form>

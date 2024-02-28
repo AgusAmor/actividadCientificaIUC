@@ -25,11 +25,11 @@ if (isset($_GET['investigador'])){
                 ";
             ?>
         
-        <div>
+        <div class="campo">
             <label for="nom">Nombre</label>
             <input id="nom" name="nom" type="text"/>
         </div>
-        <div>
+        <div class="campo">
             <label for="arch">Archivo</label>
             <input id="arch" name="arch" type="file"/>
         </div>

@@ -8,7 +8,7 @@
             <table id="tabla_servicio">
                 <caption>Bandeja de servicio</caption>
                 <tr>
-                    <th id="serv">Servicio</th>
+                    <th id="servicio">Servicio</th>
                     <th id="tt">Titulo</th>
                     <th id="inv">Investigador</th>
                     <th id="obj">Objetivo</th>
@@ -31,21 +31,25 @@
 
                         // CAMBIO DE ESTADO
                         if ($fila['estado'] == "Ingresado"){
-                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=1&investigador=$_SESSION[id]>Iniciar</a></td>";
+                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=1&investigador=$_SESSION[id] style=color:cornflowerblue>Iniciar</a></td>";
                         }else if ($fila['estado'] == "Ejecucion"){
-                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=2&investigador=$_SESSION[id]>Enviar</a></td>";
+                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=2&investigador=$_SESSION[id] style=color:lime>Enviar</a></td>";
                         }else if ($fila['estado'] == "Enviado"){
-                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=3&investigador=$_SESSION[id]>Revision</a></td>";
+                            echo "<td><a href=cambioEstado.php?id=$fila[id]&accion=3&investigador=$_SESSION[id] style=color:blueviolet>Revision</a></td>";
                         }else if ($fila['estado'] == "Revision"){
-                            echo "<td><a href=publicado.php?id=$fila[id]&accion=4&investigador=$_SESSION[id]>Publicar</a></td>";
+                            echo "<td><a href=publicado.php?id=$fila[id]&accion=4&investigador=$_SESSION[id] style=color:orange>Publicar</a></td>";
                         }
 
                         // ACCIONES
                         if ($fila['estado'] != "Cancelado"){
                             // PUBLICADO
                             if ($fila['estado'] == "Publicado"){
+                                if ($fila['enlace'] != NULL){
+                                    echo "<td><a href=$fila[enlace] target=blank>Enlace</a></td>";
+                                }else{
+                                    echo "<td><a href=# >Enlace</a></td>";
+                                }
                                 echo "
-                                <td><a href=$fila[enlace] target=blank>Enlace</a></td>
                                 <td><a href=trazabilidad.php?id=$fila[id]&fechaFin=$fila[fechaFin]&estado=$fila[estado]>Trazabilidad</a></td>
                                 <td><a href=documentacion.php?id=$fila[id]>Documentación</a></td>
                                 <td><a href=modificaciones.php?id=$fila[id] >Modificaciones</a></td>
@@ -60,7 +64,7 @@
                                 }
                                 // TODAS LAS DEMAS
                                 echo "
-                                <td><a href=cambioEstado.php?id=$fila[id]&accion=5&investigador=$_SESSION[id]&estado=$fila[estado]>Cancelar</a></td>
+                                <td><a href=cambioEstado.php?id=$fila[id]&accion=5&investigador=$_SESSION[id]&estado=$fila[estado] style=color:red>Cancelar</a></td>
                                 <td><a href=modInvestigacion.php?id=$fila[id]&investigador=$_SESSION[id]>Editar</a></td>
                                 ";
                             }

@@ -11,10 +11,9 @@ $accion = $_GET['accion'];
 }
 
 echo "
-    <form action=cambioEstado.php method=get >
+    <form id=form_publi action=cambioEstado.php method=get >
         <fieldset>
             <legend>Publicar investigacion</legend>
-        </fieldset>
         <div>
             <input type=hidden id=id name=id value=$id />
             <input type=hidden id=accion name=accion value=$accion />
@@ -27,6 +26,7 @@ echo "
         <div>
             <input type=submit class=btn_form />
         </div>
+        </fieldset>
     </form>
     <div class=boton>
         <a href=index.php>Volver</a>

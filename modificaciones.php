@@ -15,35 +15,35 @@
     $fila2 = mysqli_fetch_array($resultado2);
 ?>
 <section>
-    <table>
-        <legend>Modificaciones investigación: <?php echo "$fila2[nombre]";?></legend>
+    <table id="tabla_mod">
+        <caption>Modificaciones investigación: <?php echo "$fila2[nombre]";?></caption>
         <tr>
-            <th>N° modificacion</th>
-            <th>Investigador</th>
-            <th>Fecha</th>
+            <th id="mod">N° modificacion</th>
+            <th id="inv">Investigador</th>
+            <th id="fch">Fecha</th>
             <th colspan = 4>Cambios realizados</th>
         </tr>
-        <tr>
+        <tr id=cambios>
             <td></td>
             <td></td>
             <td></td>
-                <th>Servicio</th>
-                <th>Nombre</th>
-                <th>Objetivo</th>
-                <th>Fecha de fin</th>
+                <th id="serv">Servicio</th>
+                <th id="nom">Nombre</th>
+                <th id="obj">Objetivo</th>
+                <th id="fchf">Fecha de fin</th>
             
         </tr>
         <?php
         while ($fila = mysqli_fetch_array ($resultado)){
             echo "
-            <tr>
+            <tr id=modificados>
                 <td>$fila[id]</td>
                 <td>$fila[investigador]</td>
                 <td>$fila[fecha]</td>
-                    <td>$fila[servicio]</td>
-                    <td>$fila[nombre]</td>
-                    <td>$fila[objetivo]</td>
-                    <td>$fila[fechaFin]</td>
+                    <td id=cambios >$fila[servicio]</td>
+                    <td id=cambios >$fila[nombre]</td>
+                    <td id=cambios >$fila[objetivo]</td>
+                    <td id=cambios >$fila[fechaFin]</td>
             </tr>
             ";
         }

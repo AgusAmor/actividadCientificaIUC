@@ -41,7 +41,12 @@ table{
     border-style: solid;
     border-color: rgb(67, 179, 127);
 }
-/*/
+
+caption{
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: rgb(67, 179, 127);
+}
 
 /* formularios */
 form{
@@ -106,10 +111,16 @@ form select{
     border: 0;
     padding: 3px;
     border-radius: 10px;
+    width: auto;
+}
+
+.btn_container{
+    display: flex;
+    gap: 10px;
+    float: right;
 }
 
 .btn_form{
-    
     border-radius: 15px;
     color: rgb(255, 255, 255);
     background-color: rgb(67, 179, 127);
@@ -154,6 +165,7 @@ header a {
 header a:hover{
     color: rgb(255, 255, 255);
 }
+/*/
 
 
 /* INDEX */
@@ -172,7 +184,7 @@ header a:hover{
     color: rgb(67, 179, 127);
 }
 
-#tabla_servicio a {
+#tabla_servicio a{
     color: rgb(67, 179, 127);
 }
 
@@ -187,34 +199,7 @@ header a:hover{
 #tabla_servicio th{
     padding-bottom: 5px;
 }
-
-#serv{
-    width: 5%;
-}
-
-#tt{
-    width: 20%;
-}
-
-#inv{
-    width: 5%;
-}
-
-#obj{
-    width: 25%;
-}
-
-#fch{
-    width: 15%;
-}
-
-#est{
-    width: 5%;
-}
-
-#acc{
-    width: 30%;
-}
+/*/
 
 
 /* TRAZABILIDAD */
@@ -222,12 +207,6 @@ header a:hover{
     text-align: center;
     margin-bottom: 30px;
     width: 70%;
-}
-
-#tabla_traz caption{
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: rgb(67, 179, 127);
 }
 
 #tabla_traz td{
@@ -240,24 +219,231 @@ header a:hover{
     text-align: center;
     width: 33%;
 }
+/*/
 
-/* CARGAR ARCHIVO */
-#form_carch fieldset{
-    padding: 20px;
+
+/* MODIFICACIONES */
+#tabla_mod{
+    width: 1000px;
 }
 
-#form_carch div input{
+#tabla_mod #mod{
+    width: 130px;
+}
+
+#tabla_mod #inv{
+    width: 110px;
+}
+
+#tabla_mod #fch{
+    width: 90px;
+}
+
+#tabla_mod #serv{
+    width: 100px;
+}
+
+#tabla_mod #nom{
+    width: auto;
+}
+
+#tabla_mod #obj{
+    width: 170px;
+}
+
+#tabla_mod #fchf{
+    width: 100px;
+}
+
+#tabla_mod #modificados{
+    text-align: center;
+}
+
+#tabla_mod #cambios{
+    border-style: solid;
+}
+/*/
+
+
+/* CARGAR ARCHIVO */
+#form_carch{
+    width: 550px;
+}
+
+#form_carch #arch{
     margin-left: 20px;
 }
 
+#form_carch #nom{
+    margin-left: 16px;
+    width: 332px;
+}
+
+#form_carch fieldset{
+    padding: 20px;
+}
+/*/
+
 
 /* NUEVA ACTIVIDAD */
-#form_nact #btn_container{
-    display: flex;
-    gap: 10px;
-    float: right;
+#form_nact{
+    width: 500px;
 }
 
 #form_nact fieldset{
     padding: 20px;
 }
+
+#form_nact select{
+    width: auto;
+}
+
+#form_nact .campo{
+    margin: 5px auto;
+    width: 300px;
+}
+
+#form_nact #serv{
+    margin-left: 49px;
+    width: 165px;
+}
+
+#form_nact #nom{
+    margin-left: 66px;
+    width: 165px;
+}
+
+#form_nact #obj{
+    margin-left: 39px;
+    width: 165px;
+}
+
+#form_nact #finEst{
+    margin-left: 18px;
+    width: 165px;
+}
+
+#form_nact .btn_container{
+    float: none;
+    margin-top: 10px;
+    width: 250px;
+}
+/*/
+
+
+/* MODIFICAR ACTIVIDAD */
+#form_mod{
+    width: 550px;
+}
+
+#form_mod fieldset{
+    padding: 20px;
+}
+
+#form_mod select{
+    width: auto;
+}
+
+#form_mod .campo{
+    margin: 5px auto;
+    width: 300px;
+}
+
+#form_mod #serv{
+    margin-left: 49px;
+    width: 165px;
+}
+
+#form_mod #nom{
+    margin-left: 66px;
+    width: 165px;
+}
+
+#form_mod #obj{
+    margin-left: 39px;
+    width: 165px;
+}
+
+#form_mod #finEst{
+    margin-left: 18px;
+    width: 165px;
+}
+
+#form_mod .btn_container{
+    float: none;
+    margin-top: 10px;
+    width: 160px;
+}
+/*/
+
+/* PUBLICAR */
+#form_publi{
+    width: 500px;
+}
+
+#form_publi fieldset{
+    padding: 10px;
+}
+
+#form_publi #link{
+    margin-left: 10px;
+}
+
+#form_publi .btn_form{
+    margin-right: 10px;
+}
+
+
+/*/
+
+
+/* INICIAR SESION */
+#form_login{
+    width: 400px;
+    margin: 3% auto;
+}
+
+#form_login .campo{
+    text-align: center;
+}
+
+#form_login .campo #mail{
+    margin-left: 30px;
+}
+
+#form_login .campo #pass{
+    margin-left: 77px;
+}
+
+#form_login .btn_container{
+    margin-right: 3px;
+}
+/*/
+
+
+/* REGISTRARSE */
+#registrarse_form{
+    width: 400px;
+    margin: 3% auto;
+}
+
+#registrarse_form #nom{
+    margin-left: 100px;
+}
+
+#registrarse_form #mail{
+    margin-left: 26px;
+}
+
+#registrarse_form #pass{
+    margin-left: 74px;
+}
+
+#registrarse_form #pass2{
+    margin-left: 3px;
+}
+
+#registrarse_form .btn_container{
+    margin-right: 8px;
+}
+/*/
