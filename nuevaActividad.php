@@ -10,7 +10,7 @@ $investigador = $_GET['investigador'];
             <legend>Registro de actividad científica</legend>
             <div class="campo">
                  <label for="serv">Servicio</label>
-                 <select name="serv" id="serv">
+                 <select name="serv" id="serv" required>
                      <option default>-</option>
                      <option value="CG">Cirugia general</option>
                      <option value="ORL">ORL</option>
@@ -19,7 +19,7 @@ $investigador = $_GET['investigador'];
             </div>
             <div class="campo">
                  <label for="nom">Título</label>
-                 <textarea name="nom" id="nom"></textarea>
+                 <textarea name="nom" id="nom" required></textarea>
             </div>
             <div class="campo">
                 <?php
@@ -28,11 +28,11 @@ $investigador = $_GET['investigador'];
             </div>
             <div class="campo">
                 <label for="obj">Objetivos</label>
-                <textarea name="obj" id="obj"></textarea>
+                <textarea name="obj" id="obj" required></textarea>
             </div>
             <div class="campo">   
                 <label for="finEst">Fecha de fin</label>
-                <input id="finEst" name="finEst" type="date"/>
+                <input id="finEst" name="finEst" type="date" required/>
             </div>
             <div class="btn_container">
                 <input class="btn_form" type="submit" value="Guardar"/>

@@ -24,7 +24,7 @@ echo "
             <input type=text id=link name=link />
         </div>
         <div>
-            <input type=submit class=btn_form />
+            <input type=submit class=btn_form value=Enviar />
         </div>
         </fieldset>
     </form>

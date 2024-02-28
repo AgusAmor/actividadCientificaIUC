@@ -31,7 +31,7 @@ if (isset($_GET['investigador'])){
         </div>
         <div class="campo">
             <label for="arch">Archivo</label>
-            <input id="arch" name="arch" type="file"/>
+            <input id="arch" name="arch" type="file" required/>
         </div>
         <input class="btn_form" type="submit" value="Enviar" />
         </fieldset>

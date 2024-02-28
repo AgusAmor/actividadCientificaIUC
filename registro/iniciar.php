@@ -20,11 +20,11 @@ require_once("../conexion/conexion.php");
                 <legend>Iniciar sesión</legend>
                 <div class="campo">
                     <label for="mail">Correo electrónico</label>
-                    <input id="mail" name="mail" type="email"/>
+                    <input id="mail" name="mail" type="email" required/>
                 </div>
                 <div class="campo">
                     <label for="pass">Contraseña</label>
-                    <input id="pass" name="pass" type="password"/>
+                    <input id="pass" name="pass" type="password" required/>
                 </div>
                 <?php
                 if(isset($_GET['registro'])){
